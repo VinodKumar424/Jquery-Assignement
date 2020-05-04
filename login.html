@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a modal box jquery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('#popupmodal a').bind('click',function(e){
+    var $this = $(this);
+    $('#overlay').show();
+    if(!$('#modal').is(':visible'))
+        $('#modal').css('left','-260px')
+       .show()
+       .stop()
+       .animate({'left':'50%'}, 600);
+       e.preventDefault(); //default click prevented
+    });
+ 
+    //clicking on the cross hides the dialog
+    $('#modal .close').bind('click',function(){
+       $('#modal').stop()
+       .animate({'left':'150%'}, 600, function(){
+       $(this).hide();
+       $('#overlay').hide();
+       });
+    });
+});
+</script>
+
+
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        $(".menu-icon").on("click",function(){
+            $("nav ul").toggleClass("showing");
+        });
+    });
+
+
+    $(window).on("scroll",function(){
+        if($(window).scrollTop()){
+            $('nav').addClass('black');
+        }
+        else{
+            $('nav').removeClass('black');
+        }
+    })
+    </script>
+
+</head>
+<body>
+
+
+    <div class="wrapper">
+        <header>
+            <nav>
+                <div class="menu-icon">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <div class="logo">
+                    LOGO
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="login.html">Home</a></li>
+                        <li><a href="collapse.html">Collapse</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="jumbotron" style="text-align: center; margin-top: 40px;">
+                <h1 class="display-4" style="color: indigo;">Welcome to login page!</h1>
+                <p style="color: red;">here we can using collapse and modal sticky nav bar conncepts using Jquery</p>
+              </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <div id="overlay" class="overlay" style="display:none;"></div>
+                    <div id="modal" class="modal" style="display:none;">
+                        <span class="close"></span>
+                        <h2><img src="security.jpg"/>Login</h2>
+                        <div class="contents">
+                        <h1>Login[Quick Form Processing]</h1>
+                        <form action="" method="POST">
+                        <p><label style="display: block;">Username:</label><input class="text" type="text" name="username" /></p>
+                        <p><label style="display: block;">Password:</label><input class="text" type="password" name="password" /></p>
+                        <p><button class="button" name="login"  type="submit"><a href="collapse.html">Login</a></button></p>
+                        </form>
+                        <p><a href="#">Forgot password?</a></p>
+                        </div>
+                    </div>
+        
+                    <div id="popupmodal" style="text-align:center;margin:100px 0px 20px 0px">
+                        <!-- <a href="#"><button class="btn btn-primary"><h1>Click here to popup Login Modal</h1></button></a> -->
+                        <a href="#"><button type="button" class="btn btn-primary"><h1>Click here to popup Login Modal</h1></button></a>
+
+                    </div>
+                    <!-- <a href="#"><button type="button" class="btn btn-primary"><h1>Click here to popup Login Modal</h1></button></a> -->
+
+                </div>
+              </div>
+        
+
+
+        </header>
+        </div>
+
+    
+    
+
+
+      
+
+ 
+<style>
+*{
+margin:0;
+padding:0;
+}
+body{
+font-family:"Myriad Pro",Arial, Helvetica, sans-serif;
+/* overflow-x:hidden; */
+}
+.modal{
+position:absolute;
+top:25%;
+width: 350px;
+height:300px;
+margin-left:-200px;
+z-index:9999;
+color:#fff;
+text-shadow:1px 1px 1px #000;
+border:1px solid #303030;
+background-color:#212121;
+-moz-box-shadow:0px 0px 10px #000;
+-webkit-box-shadow:0px 0px 10px #000;
+box-shadow:0px 0px 10px #000;
+}
+.modal h2{
+font-weight:100;
+padding:5px 0px 5px 5px;
+margin:5px;
+background-color:#111;
+border:1px solid #272727;
+}
+.modal h2 img{
+float:left;
+width:28px;
+margin-right:10px;
+-moz-box-shadow:0px 0px 4px #000;
+-webkit-box-shadow:0px 0px 4px #000;
+box-shadow:0px 0px 4px #000;
+}
+span.close{
+background:#000 url(no.png) no-repeat center center;
+cursor:pointer;
+height:25px;
+width:25px;
+position:absolute;
+right:12px;
+top:12px;
+cursor:pointer;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+border-radius:5px;
+opacity:0.5;
+}
+span.close:hover{
+opacity:1.0;
+}
+.overlay{
+position:fixed;
+z-index:999;
+top:0px;
+left:0px;
+width:100%;
+height:100%;
+background-color:#000;
+opacity:0.7;
+}
+.contents {
+padding:10px 10px 10px 45px;
+}
+.button{
+display: inline-block;
+float:right;
+padding: 4px 10px;
+background-color: #1951A5;
+color:#fff;
+margin:20px;
+font-size:12px;
+letter-spacing:1px;
+text-shadow:1px 1px 1px #011c44;
+text-transform:uppercase;
+text-decoration: none;
+border:1px solid #4c7ecb;
+outline:none;
+background-image:
+-moz-linear-gradient(
+top,
+rgba(255,255,255,0.25),
+rgba(255,255,255,0.05)
+);
+background-image:
+-webkit-gradient(
+linear,
+left top,
+left bottom,
+color-stop(0, rgba(255,255,255,0.25)),
+color-stop(1, rgba(255,255,255,0.05))
+);
+-moz-box-shadow: 1px 1px 3px #000;
+-webkit-box-shadow: 1px 1px 3px #000;
+box-shadow: 1px 1px 3px #000;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+.button:hover{
+color: #011c44;
+text-shadow: 1px 1px 1px #ccdffc;
+}
+.button:active{
+margin-top:21px;
+}
+h1{font-weight:normal;font-size:20px;color:#aaaaaa;margin:10 0 10px 0;}
+p{font-size: 16px;color: #dedede;margin-top:10px;}
+a {color:#729e01;text-decoration:none;}
+a:hover{color:#dedede;}
+input.text{ border:#ccc 1px solid;-moz-border-radius:7px; -webkit-border-radius:7px;font-size: 20px;width:300px;padding-left:5px;}
+</style>
+</body>
+</html>

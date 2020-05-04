@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!-- cards hover effect -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+ crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+<!-- todolist -->
+     <link rel='stylesheet' type='text/css' media='screen' href='todo.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--card hover Effect-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='card.css'>
+
+    <!-- newsticker -->
+    <script src="jquery-2.1.4.min.js"></script>
+    <script>
+        var interval;
+        function startTicker()
+        {
+            $("#news li:first").slideUp(function(){
+                $(this).appendTo($("#news")).slideDown();
+            });
+        }
+        function stopTicker()
+        {
+          clearInterval(interval);
+        }
+        $(document).ready(function(){
+            interval=setInterval(startTicker,1000);
+            $("#news").hover(function(){
+                stopTicker();
+            }, function(){
+                interval = setInterval(startTicker,1000);
+            });
+        });
+        
+    </script>
+    <style>
+        .ticker
+        {
+            background-color: #ABD1C0;
+            width: 250px;
+            height: 200px;
+            border: 3px solid #0e5736;
+            overflow: hidden;
+            border-radius: 15px;
+            margin: 0px auto;
+        }
+        li{
+            text-align: justify;
+            list-style-type: none;
+            border-bottom: 2px solid #024d28;
+            height: 70px;
+        }
+        ul{
+            margin: 1px;
+            padding: 1px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header>
+            <nav>
+                <div class="menu-icon">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <div class="logo">
+                    LOGO
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="login.html">Home</a></li>
+                        <li><a href="collapse.html">Collapse</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="divexpand" style="text-align: center; margin-top: 40px;">
+                <h2 style="color: red;">Cards Hover</h2>
+                <div class="divcollapse" style="border-top: solid 12px grey; display: none;">
+                <!-- <h1>This is Article1</h1> -->
+                
+                <div class="card-deck ml-3">
+                    <div class="card mr-3">
+                      <img src="images/img1.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: hotpink;">Photography</h5>
+                        <hr>
+                        <p class="card-text">Photographers can work as fine artists, wedding and event photographers, 
+                            or sell their photos to commercial clients..</p>
+                            <hr>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="#" class="btn btn-primary">Read More...</a>
+                      </div>
+                    </div>
+                    <div class="card mr-3">
+                      <img src="images/img2.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: hotpink;">Portfolio</h5>
+                        <hr>
+                        <p class="card-text">A portfolio is a compilation of materials that exemplifies your beliefs, skills, 
+                            qualifications, education, training and experiences. </p>
+                            <hr>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="#" class="btn btn-primary">Read More...</a>
+                      </div>
+                    </div>
+                    <div class="card mr-3">
+                      <img src="images/img3.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: hotpink;">Features</h5>
+                        <hr>
+                        <p class="card-text">A feature is a distinctive characteristic of a good or
+                             service that sets it apart from similar items.</p>
+                             <hr>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="#" class="btn btn-primary">Read More...</a>
+                      </div>
+                    </div>
+                  </div>
+        
+            </div>
+            </div>
+        
+            <div class="divexpand" style="text-align: center;">
+                <h2 style="color: blue;">Image Over Name</h2>
+                <div class="divcollapse" style="border-top: solid 12px grey; display: none;">
+                <!-- <h1>This is Article2</h1> -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="single-content">
+                                <img src="images/man1.jpg" alt="" width="100%" height="300px">
+                                <div class="text-content">
+                                    <h4>JohnDoe</h4>
+                                    <h5>WebDesigner</h5>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-4 col-sm-6">
+                            <div class="single-content">
+                                <img src="images/man2.jpg" alt="" width="100%" height="400px">
+                                <div class="text-content">
+                                    <h4>Steve Miller</h4>
+                                    <h5>Graphics Designer</h5>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-4 col-sm-6">
+                            <div class="single-content">
+                                <img src="images/man3.jpg" alt="" width="100%" height="350px">
+                                <div class="text-content">
+                                    <h4>Jason Lee</h4>
+                                    <h5>Digital Marketer</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        
+            <div class="divexpand" style="text-align: center;">
+                <h2 style="color:green;">News Reader</h2>
+                <div class="divcollapse" style="border-top: solid 12px grey; display: none;">
+                <h1>This is Article3</h1>
+        
+                <div class="ticker">
+                    <ul id="news">
+                        <li>The<b> first</b> pice of news.The<b> first</b> pice of news.The<b> first</b> pice of news.</li>
+                        <li>The<b> second</b> pice of news.The<b> first</b> pice of news.The<b> first</b> pice of news.</li>
+                        <li>The<b> third</b> pice of news.The<b> first</b> pice of news.The<b> first</b> pice of news.</li>
+                        <li>The<b> fourth</b> pice of news.The<b> first</b> pice of news.The<b> first</b> pice of news.</li>
+                        <li>The<b> fifth</b> pice of news.The<b> first</b> pice of news.The<b> first</b> pice of news.</li>
+                        <li>The<b> sixth</b> pice of news.The<b> first</b> pice of news.The<b> first</b> pice of news.</li>
+                        <li>The<b> seventh</b> pice of news.The<b> first</b> pice of news.The<b> first</b> pice of news.</li>
+                
+                         
+                    </ul>
+                </div>
+        
+            </div>
+            </div>
+        
+            <div class="divexpand" style="text-align: center;">
+                <h2 style="color: deeppink;">Todo List</h2>
+                <div class="divcollapse" style="border-top: solid 12px grey; display: none;">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h5 class="card-title" style="color:darkgreen;">TODO LIST</h5>
+                      <p class="card-text" style="color:pink;">We are adding some data and save the data
+                           and remove the data shown in click on given button.</p>
+                      <a href="todo.html" class="btn btn-primary">Add TODO List Items</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                    <p style="color: darkblue;"> www.todolist@page.com</p>  
+                    </div>
+                  </div>
+                
+            </div>
+            </div> 
+
+
+
+        </header>
+        </div>
+
+
+
+
+ 
+
+<script>
+    $('.divexpand').click(function()
+    {
+        $(this).find('.divcollapse').slideToggle('slow');
+    });
+</script>
+
+
+<!-- todolist -->
+<script type="text/javascript">
+    $(".txtb").on("keyup",function(e){
+        if(e.keyCode == 13 && $(".txtb").val()!="")
+        {
+            var task =$("<div class='task'></div>").text($(".txtb").val());
+            var del =$("<i class='fas fa-trash-alt'></i>").click(function(){
+                var p =$(this).parent();
+                p.fadeOut(function(){
+                    p.remove();
+                });
+            });
+            var check =$("<i class='fas fa-check'></i>").click(function(){
+                var p =$(this).parent();
+                p.fadeOut(function(){
+                    $(".comp").append(p);
+                    p.fadeIn();
+                });
+                $(this).remove();
+            });
+            task.append(del,check);
+
+            $(".notcomp").append(task);
+            $(".txtb").val("");
+        }
+    });
+    </script>
+
+
+<!-- navbar -->
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        $(".menu-icon").on("click",function(){
+            $("nav ul").toggleClass("showing");
+        });
+    });
+
+
+    $(window).on("scroll",function(){
+        if($(window).scrollTop()){
+            $('nav').addClass('black');
+        }
+        else{
+            $('nav').removeClass('black');
+        }
+    })
+    </script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+ integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+ crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="jquery-2.1.4.min.js"></script>
+    <script>
+        var interval;
+        function startTicker()
+        {
+            $("#news li:first").slideUp(function(){
+                $(this).appendTo($("#news")).slideDown();
+            });
+        }
+        function stopTicker()
+        {
+          clearInterval(interval);
+        }
+        $(document).ready(function(){
+            interval=setInterval(startTicker,1000);
+            $("#news").hover(function(){
+                stopTicker();
+            }, function(){
+                interval = setInterval(startTicker,1000);
+            });
+        });
+        
+    </script>
+    <style>
+        .ticker
+        {
+            background-color: #ABD1C0;
+            width: 250px;
+            height: 200px;
+            border: 3px solid #0e5736;
+            overflow: hidden;
+            border-radius: 15px;
+            margin: 0px auto;
+        }
+        li{
+            text-align: justify;
+            list-style-type: none;
+            border-bottom: 2px solid #024d28;
+            height: 70px;
+        }
+        ul{
+            margin: 1px;
+            padding: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticker">
+    <ul id="news">
+        <li>The<b> first</b> pice of news.The<b> first</b> pice of news.The<b> first</b> pice of news.</li>
+        <li>The<b> second</b> pice of news.The<b> first</b> pice of news.The<b> first</b> pice of news.</li>
+        <li>The<b> third</b> pice of news.The<b> first</b> pice of news.The<b> first</b> pice of news.</li>
+        <li>The<b> fourth</b> pice of news.The<b> first</b> pice of news.The<b> first</b> pice of news.</li>
+        <li>The<b> fifth</b> pice of news.The<b> first</b> pice of news.The<b> first</b> pice of news.</li>
+        <li>The<b> sixth</b> pice of news.The<b> first</b> pice of news.The<b> first</b> pice of news.</li>
+        <li>The<b> seventh</b> pice of news.The<b> first</b> pice of news.The<b> first</b> pice of news.</li>
+
+         
+    </ul>
+</div>
+</body>
+</html>
